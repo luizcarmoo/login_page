@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
+
+$theme-color: #00d9ff;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1.5rem;
+
+    &::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background-color: $theme-color;
+        width: 60%;
+        height: 100vh;
+        clip-path: polygon(0 100%, 0 0, 100% 0, 70% 100%);
+        z-index: -1;
+    }
+}
+
+.image-container {
+    width: 500px;
+}
+
+.login-card {
+    background-color: white;
+    border: 1px solid #dddddd85;
+    box-shadow: 0 10px 50px -30px black;
+    width: 1200px;
+    height: 85vh;
+    border-radius: 30px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: auto auto;
+
+    a {
+        text-decoration: none;
+        color: $theme-color;
+    }
+
+    .column {
+        padding: 4rem;
+
+        &:last-child {
+            background: no-repeat url('../images/model-2-login-screen-animate.svg');
+            background-size: 90%, cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            
+            &:after {
+                content: "";
+                position: absolute;
+                background: linear-gradient(90deg, white, #ffffff33);
+                inset: 0;
+            }
+            
+            * {
+                z-index: 1;
+            }
+        }
+        
+    }
+}
